@@ -788,5 +788,3 @@ Before completing the task, verify that the analysis:
 The objective is not to maximize the amount of analysis.
 
 The objective is to make the business problem precise enough that technical design can begin with minimal ambiguity.
-
-```
