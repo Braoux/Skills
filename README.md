@@ -412,5 +412,3 @@ conceptual-analysis
 ```
 
 Additional skills will be added as reusable agent workflows are identified and refined.
-
-```
