@@ -330,5 +330,3 @@ The objective is to make the requirement precise enough for technical design to 
 Initial version.
 
 This skill is currently focused exclusively on conceptual and domain analysis.
-
-```
