@@ -12,6 +12,6 @@ Produce a portable compact summary for a downstream ticket reviewer.
 
 **Confidentiality:** generated context may disclose internal business rules, permissions, integrations or code structure. Save it to an authorized project workspace and obtain permission before public publication.
 
-The [SISMA subtree](SISMA/software-functional-context/README.md) is existing project-specific output, **not part of the generic skill**. It is deliberately left unchanged by this maintenance update.
+Project-specific generated documentation is intentionally not included in this repository. Store any such output separately, and publish it only with the relevant owner's authorization.
 
 For ticket evaluation see [Ticket Readiness](../Ticket-Readyness/SKILL.md).

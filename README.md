@@ -59,7 +59,7 @@ Audit the architecture of src/modules/billing and explain the score.
 
 ## Project-specific examples and confidentiality
 
-The `Software-Functional-Context/SISMA/` directory contains **project-derived documentation**, not reusable skill instructions. It is not needed to install the skill. Confirm publication rights before distributing derived details from a private or employer repository: business rules, access roles and system structure may still be sensitive without credentials.
+This repository contains reusable skill instructions, not project-specific generated output. Keep functional context derived from private or employer repositories in authorized workspaces. Even without credentials, business rules, access roles and system structure may be sensitive.
 
 ## Contributing and quality checks
 
@@ -75,4 +75,4 @@ The GitHub Actions workflow runs the same structural check on pull requests and 
 
 - Several long skills need gradual progressive-disclosure refactoring backed by regression scenarios. This cleanup preserves their substantive instructions.
 - Historical directory casing/spelling cannot be changed safely without migrating existing consumers.
-- Project-specific generated context should eventually live outside this generic skill collection.
+- Keep any generated project-specific context in the appropriate private workspace; do not add it to the public skill catalogue.
