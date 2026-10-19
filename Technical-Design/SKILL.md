@@ -1,4 +1,3 @@
-````markdown
 ---
 name: technical-design
 description: Transform a validated requirement or conceptual analysis into an implementation-ready technical design covering architecture, components, data, APIs, dependencies, consistency, risks, and implementation strategy.
@@ -34,7 +33,7 @@ Preferred source:
 
 ```text
 docs/conceptual-analysis/
-````
+```
 
 A technical design may also be produced directly from:
 

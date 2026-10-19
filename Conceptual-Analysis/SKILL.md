@@ -1,4 +1,3 @@
-````markdown
 ---
 name: conceptual-analysis
 description: Analyze business requirements conceptually before technical design and produce a persistent Markdown analysis.
@@ -293,7 +292,7 @@ SUSPENDED
        |
        v
 CANCELLED
-````
+```
 
 Only include states or transitions supported by available information.
 

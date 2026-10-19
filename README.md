@@ -1,414 +1,78 @@
-````markdown
 # OpenClaw Skills
 
-A collection of reusable OpenClaw skills designed to improve how AI agents analyze problems, reason about software, and execute development-related tasks.
+Reusable, task-focused skills for AI coding agents. Originally designed for OpenClaw, they can also be consumed by other agents that support `SKILL.md` instructions.
 
-This repository serves as a shared library of specialized skills that can be reused across multiple OpenClaw agents and workspaces.
-
----
-
-## Purpose
-
-Instead of embedding every behavior directly inside an agent prompt, this repository separates reusable capabilities into dedicated skills.
-
-The general idea is:
-
-```text
-Agent
-  |
-  +-- Skill: Conceptual Analysis
-  +-- Skill: Technical Design
-  +-- Skill: Code Review
-  +-- Skill: Ticket Analysis
-  +-- ...
-````
-
-Each skill focuses on one responsibility and can evolve independently.
-
-This makes agents easier to maintain, extend, test, and reuse.
-
----
-
-## Repository structure
-
-```text
-Skills/
-├── README.md
-│
-├── conceptual-analysis/
-│   ├── SKILL.md
-│   └── README.md
-│
-├── technical-design/
-│   ├── SKILL.md
-│   └── README.md
-│
-├── code-review/
-│   ├── SKILL.md
-│   └── README.md
-│
-└── ...
-```
-
-Each skill lives in its own directory.
-
-The main skill definition is always stored in:
-
-```text
-SKILL.md
-```
-
-A skill may also contain additional resources such as:
-
-```text
-README.md
-examples/
-templates/
-scripts/
-references/
-```
-
-when they are useful.
-
----
+**Current status:** five implemented skills. Their outputs are decision aids and must be checked against real evidence.
 
 ## Available skills
 
-### Conceptual Analysis
+| Skill | Purpose | Documentation |
+| --- | --- | --- |
+| **Conceptual Analysis** | Clarify business rules, invariants and ambiguity before technical design. | [Instructions](Conceptual-Analysis/SKILL.md) · [Guide](Conceptual-Analysis/README.md) |
+| **Ticket Readiness** | Assess whether a ticket is clear, actionable and testable, with a justified readiness score. | [Instructions](Ticket-Readyness/SKILL.md) · [Guide](Ticket-Readyness/README.md) |
+| **Technical Design** | Turn an understood requirement into an implementable, proportional design. | [Instructions](Technical-Design/SKILL.md) · [Guide](Technical-Design/README.md) |
+| **Architectural Audit** | Examine architectural cohesion, coupling and changeability at file or project level. | [Instructions](Architectural-Audit/SKILL.md) · [Guide (FR)](Architectural-Audit/README.md) |
+| **Software Functional Context** | Create portable, evidence-based documentation of existing application behavior. | [Instructions](Software-Functional-Context/SKILL.md) · [Guide](Software-Functional-Context/README.md) |
 
-Location:
+> The mixed-case directories are historical names retained for compatibility. `Ticket-Readyness/` is a legacy path; the canonical skill identifier is `ticket-readiness`.
 
-```text
-conceptual-analysis/
-```
+## Typical workflow
 
-Purpose:
+These skills are composable, not a mandatory waterfall:
 
-Analyze a business requirement before technical design or implementation.
+1. **Ticket Readiness:** find missing information and blockers.
+2. **Conceptual Analysis:** model non-trivial business behavior and invariants.
+3. **Technical Design:** identify a safe, minimal implementation.
+4. **Architectural Audit:** independently evaluate structural quality when useful.
+5. **Software Functional Context:** generate a handoff when the recipient cannot inspect the source repository.
 
-It identifies:
+A trivial change may need none of them. Do not create documentation for its own sake.
 
-* domain concepts;
-* relationships;
-* business rules;
-* invariants;
-* states and lifecycle;
-* ambiguities;
-* assumptions;
-* edge cases;
-* consistency risks;
-* blocking questions.
+## Getting started
 
-It can also produce a persistent Markdown analysis under:
+1. Clone this repository:
 
-```text
-docs/conceptual-analysis/
-```
+   ~~~bash
+   git clone https://github.com/Braoux/Skills.git
+   ~~~
 
-See:
+2. Select the desired skill directory. Copy or link the **whole directory** into the skills directory supported by your agent, or provide its `SKILL.md` directly. Installation paths vary by agent; this repository does not ship a universal installer.
+3. Supply the ticket or code and the minimum necessary access. Review findings, unknowns and generated Markdown.
 
-```text
-conceptual-analysis/README.md
-```
+Example requests:
 
-for complete documentation.
-
----
-
-## Planned skills
-
-This repository is intended to grow progressively.
-
-Possible future skills include:
-
-### Technical Design
-
-Transform a validated conceptual analysis into an implementation-oriented technical design.
-
-Potential topics:
-
-* architecture;
-* components;
-* data model;
-* APIs;
-* persistence;
-* transactions;
-* concurrency;
-* integration points;
-* technical risks.
-
-### Code Review
-
-Review a code change with a consistent methodology.
-
-Potential topics:
-
-* correctness;
-* readability;
-* maintainability;
-* performance;
-* security;
-* test coverage;
-* architectural consistency.
-
-### Ticket Analysis
-
-Analyze an issue-tracker ticket and determine what information is required before implementation.
-
-Potential topics:
-
-* acceptance criteria;
-* missing information;
-* affected areas;
-* dependencies;
-* risks;
-* required analysis.
-
-### Codebase Analysis
-
-Explore an existing project before making changes.
-
-Potential topics:
-
-* architecture;
-* modules;
-* domain concepts;
-* dependencies;
-* conventions;
-* existing implementations;
-* likely impact areas.
-
-These skills are not necessarily implemented yet.
-
-The repository should favor useful, well-defined skills over creating a large number of overlapping ones.
-
----
+~~~text
+Check whether issue ABC-123 is ready to implement and list blocking questions.
+Analyze the domain invariants of a new primary-subscription requirement.
+Design a safe solution based on the validated conceptual analysis.
+Audit the architecture of src/modules/billing and explain the score.
+~~~
 
 ## Design principles
 
-Skills in this repository should follow several principles.
+- Separate **facts, deductions, assumptions and unknowns**.
+- Never invent business rules to fill gaps.
+- Read code and surrounding context before judging an implementation.
+- Keep analysis **proportional** to actual complexity.
+- Keep each skill's responsibility explicit: analysis is not implementation.
+- Explain important findings and limitations using concrete evidence.
 
-### One clear responsibility
+## Project-specific examples and confidentiality
 
-A skill should solve a specific category of problem.
+The `Software-Functional-Context/SISMA/` directory contains **project-derived documentation**, not reusable skill instructions. It is not needed to install the skill. Confirm publication rights before distributing derived details from a private or employer repository: business rules, access roles and system structure may still be sensitive without credentials.
 
-Avoid large skills that attempt to handle the entire software-development lifecycle.
+## Contributing and quality checks
 
-Prefer:
+See [CONTRIBUTING.md](CONTRIBUTING.md). Validate skill metadata, Markdown fences and relative links with:
 
-```text
-conceptual-analysis
-technical-design
-implementation
-code-review
-```
+~~~bash
+python3 scripts/validate_skills.py
+~~~
 
-over:
+The GitHub Actions workflow runs the same structural check on pull requests and pushes to `main`. It does **not** evaluate whether agents behave correctly; changes affecting behavior need representative manual or automated scenarios.
 
-```text
-do-everything-developer
-```
+## Known maintenance work
 
----
-
-### Reusable
-
-Skills should avoid unnecessary assumptions about:
-
-* a specific project;
-* company-specific processes;
-* one programming language;
-* one framework;
-* one issue tracker.
-
-Project-specific behavior should generally live in the agent or workspace configuration rather than inside a reusable skill.
-
----
-
-### Explicit boundaries
-
-A skill should clearly state what it does and what it does not do.
-
-For example, a conceptual-analysis skill should not silently become a technical-design skill.
-
-Clear boundaries reduce unpredictable agent behavior.
-
----
-
-### Facts before assumptions
-
-Skills should distinguish between:
-
-* confirmed facts;
-* deductions;
-* assumptions;
-* unknowns.
-
-Missing information should be exposed rather than silently invented.
-
----
-
-### Proportional reasoning
-
-The depth of the analysis should match the complexity of the task.
-
-A simple problem should not generate unnecessary documentation.
-
-A complex domain problem should receive deeper analysis when required.
-
----
-
-### Persistent artifacts when useful
-
-When a task produces information that should survive beyond the current conversation, the skill should prefer generating a reusable artifact.
-
-For example:
-
-```text
-docs/conceptual-analysis/
-docs/technical-design/
-```
-
-This allows future developers and agents to reuse previous work.
-
----
-
-## Language
-
-Skill definitions are written in English.
-
-Generated outputs should generally use the same language as the user's request unless explicitly instructed otherwise.
-
-This keeps the skills portable while preserving a natural user experience.
-
----
-
-## Adding a new skill
-
-Create a new directory:
-
-```text
-my-new-skill/
-```
-
-Then add at minimum:
-
-```text
-my-new-skill/
-└── SKILL.md
-```
-
-Recommended structure:
-
-```text
-my-new-skill/
-├── SKILL.md
-├── README.md
-└── examples/
-```
-
-The `SKILL.md` should clearly define:
-
-* the purpose of the skill;
-* when it should be used;
-* when it should not be used;
-* its analysis or execution process;
-* expected outputs;
-* important constraints;
-* quality criteria.
-
-Avoid duplicating responsibilities already covered by another skill.
-
----
-
-## Naming conventions
-
-Use lowercase kebab-case for skill directories.
-
-Good:
-
-```text
-conceptual-analysis
-technical-design
-code-review
-ticket-analysis
-```
-
-Avoid:
-
-```text
-ConceptualAnalysis
-technical_design
-CodeReviewSkill
-skill-v2-final
-```
-
-Skill names should describe the capability rather than the implementation technology.
-
----
-
-## Versioning
-
-Changes to skills should be committed through Git so their evolution remains traceable.
-
-Useful examples:
-
-```text
-feat: add conceptual analysis skill
-feat: add technical design skill
-fix: prevent conceptual analysis from inventing business rules
-docs: document skill structure
-refactor: simplify code review workflow
-```
-
-When changing an existing skill, preserve its intended responsibility unless the change explicitly introduces a breaking behavioral change.
-
----
-
-## Security
-
-Never commit secrets or environment-specific credentials to this repository.
-
-Do not include:
-
-```text
-.env
-API keys
-access tokens
-passwords
-credentials
-private certificates
-cookies
-session data
-```
-
-Runtime state from OpenClaw should also remain outside the repository unless explicitly required and safe to version.
-
----
-
-## Contributing
-
-When adding or modifying a skill:
-
-1. Keep the responsibility narrow.
-2. Avoid unnecessary overlap with existing skills.
-3. Define clear triggering conditions.
-4. Define clear boundaries.
-5. Make assumptions explicit.
-6. Keep outputs deterministic where practical.
-7. Add documentation when the behavior is not self-explanatory.
-8. Prefer examples that demonstrate realistic usage.
-
----
-
-## Status
-
-This repository is under active development.
-
-The first available skill is:
-
-```text
-conceptual-analysis
-```
-
-Additional skills will be added as reusable agent workflows are identified and refined.
+- Several long skills need gradual progressive-disclosure refactoring backed by regression scenarios. This cleanup preserves their substantive instructions.
+- Historical directory casing/spelling cannot be changed safely without migrating existing consumers.
+- Project-specific generated context should eventually live outside this generic skill collection.

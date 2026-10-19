@@ -107,6 +107,12 @@ Explain cross-domain effects such as validation creating contracts, updating tas
 
 Never expose passwords, keys, tokens, credentials, certificates, sensitive connection strings, or personal data samples.
 
+## Data confidentiality
+
+Before exporting the generated context, identify who is authorized to receive the source repository's derived information. Business rules, roles, workflows and architecture can be sensitive even without secrets.
+
+Write generated documentation only to an authorized project workspace. Do not automatically publish it in a public skills repository. Obtain permission from the relevant owner before sharing internal material; use synthetic or redacted examples where needed.
+
 ## Boundaries
 
 Do not:

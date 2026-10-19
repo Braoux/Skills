@@ -1,4 +1,3 @@
-````markdown
 # Architectural Audit
 
 Skill OpenClaw dédié à l’audit architectural d’un fichier, d’un module ou d’un projet complet.
@@ -44,7 +43,7 @@ Exemples :
 
 ```text
 Audite architecturalement UserService.java
-````
+```
 
 ```text
 Analyse src/services/payment.ts
@@ -609,5 +608,3 @@ est préférable à une architecture plus sophistiquée mais plus difficile à c
 Première version.
 
 Le skill est actuellement spécialisé dans l’évaluation de la qualité architecturale des fichiers et projets logiciels.
-
-```

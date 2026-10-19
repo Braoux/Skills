@@ -1,4 +1,3 @@
-````markdown
 ---
 name: ticket-readiness
 description: Evaluate whether a development ticket is sufficiently clear, complete, and actionable before implementation. Identify missing requirements, ambiguities, dependencies, acceptance criteria, risks, and blocking questions, then produce a readiness score and Markdown report.
@@ -67,7 +66,7 @@ Examples:
 
 ```text
 Is JIRA-142 ready to be developed?
-````
+```
 
 ```text
 Review this ticket before I start coding.
