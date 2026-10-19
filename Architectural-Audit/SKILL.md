@@ -1,4 +1,3 @@
-````markdown
 ---
 name: architectural-audit
 description: Audit the architectural cleanliness of a file or entire project, identify structural issues, and produce an explainable cleanliness score out of 10.
@@ -94,7 +93,7 @@ Examples:
 
 ```text
 Audit UserService.java
-````
+```
 
 ```text
 Run an architectural audit on src/services/payment.ts
@@ -1210,7 +1209,3 @@ Before completing an audit, verify that:
 The goal is not to enforce a theoretical ideal architecture.
 
 The goal is to determine how cleanly the code separates responsibilities, controls dependencies, preserves understandable boundaries, and supports safe future change.
-
-```
-
-J’ai notamment fait en sorte qu’un **fichier de 500 lignes puisse avoir 9/10 s’il est cohérent**, tandis qu’un fichier de 80 lignes plein d’abstractions inutiles puisse se faire descendre. C’est important pour éviter que le skill se transforme en pseudo-Sonar déguisé.

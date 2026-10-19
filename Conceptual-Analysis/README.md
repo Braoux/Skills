@@ -1,4 +1,3 @@
-````markdown
 # Conceptual Analysis Skill
 
 A reusable OpenClaw skill for analyzing business requirements before technical design or implementation.
@@ -17,7 +16,7 @@ Developers and AI coding agents often move too quickly from:
 Requirement
     ↓
 Implementation
-````
+```
 
 This skill introduces an explicit conceptual analysis step:
 
