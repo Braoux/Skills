@@ -9,3 +9,7 @@ node_modules/
 .DS_Store
 .idea/
 .vscode/
+
+# Keep project-specific generated functional context out of this public library
+/Software-Functional-Context/SISMA/
+/Software-Functional-Context/*/software-functional-context/
