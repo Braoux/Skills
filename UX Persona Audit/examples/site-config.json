@@ -1,0 +1,28 @@
+{
+  "expected_purpose": "",
+  "key_elements": [
+    "proposition de valeur",
+    "appel à l'action principal",
+    "menu de navigation"
+  ],
+  "motivations": [
+    "comprendre à quoi sert le service",
+    "chercher une solution à un problème",
+    "voir les fonctionnalités",
+    "comparer avec une alternative",
+    "chercher les tarifs",
+    "essayer sans s'engager",
+    "vérifier si le service semble fiable",
+    "trouver comment démarrer",
+    "voir si le service marche sur mobile",
+    "chercher de l'aide"
+  ],
+  "target_audiences": [
+    "visiteur découvrant le sujet",
+    "visiteur déjà familier du secteur",
+    "visiteur pressé",
+    "visiteur qui compare plusieurs solutions",
+    "visiteur ayant un besoin précis"
+  ],
+  "locale": "fr-FR"
+}

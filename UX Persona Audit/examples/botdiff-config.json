@@ -1,0 +1,33 @@
+{
+  "expected_purpose": "BotDiff aide les joueurs de League of Legends à comprendre un matchup de botlane et à obtenir un plan de jeu pour la phase de lane.",
+  "key_elements": [
+    "identifier ou sélectionner les champions du matchup",
+    "lancer une analyse",
+    "comprendre la valeur du plan de lane",
+    "comprendre la distinction entre alliés et adversaires",
+    "voir ce que l'analyse fournit"
+  ],
+  "motivations": [
+    "préparer sa botlane avant une partie classée",
+    "savoir comment jouer une lane difficile",
+    "comprendre les forces de sa duo botlane",
+    "voir les menaces et les fenêtres de trade",
+    "comparer le service à des outils League of Legends",
+    "trouver un outil de coaching rapide",
+    "comprendre un matchup ADC-support",
+    "tester si le service marche sur téléphone",
+    "vérifier la fiabilité d'une analyse de matchup",
+    "découvrir un outil présenté par un ami"
+  ],
+  "target_audiences": [
+    "joueur débutant de League of Legends",
+    "joueur classé Bronze ou Argent",
+    "joueur classé Or ou Platine",
+    "joueur classé Émeraude ou Diamant",
+    "support main",
+    "ADC main",
+    "joueur occasionnel",
+    "visiteur curieux ne jouant pas à League of Legends"
+  ],
+  "locale": "fr-FR"
+}
