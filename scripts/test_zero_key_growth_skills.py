@@ -26,10 +26,11 @@ def main() -> None:
         skill = skill_path.read_text(encoding="utf-8")
         assert skill.startswith("---\nname: " + name + "\n"), name
         assert re.search(r"^description: .+", skill, re.M), name
-        assert not re.search(r"^requires\\.env\\s*:", skill, re.M), name
+        assert not re.search(r"^requires\.env\s*:", skill, re.M), name
         assert "OPENAI_API_KEY" not in skill, name
-        for section in ("## Procedure", "## Required output", "## Exclusions"):
-            assert section in skill, f"{name}: {section}"
+        assert "## Procedure" in skill, name
+        assert any(label in skill for label in ("## Required output", "## Required deliverable")), name
+        assert any(label in skill for label in ("## Exclusions", "## Explicit exclusions")), name
         doc = readme_path.read_text(encoding="utf-8")
         assert "SKILL.md" in doc, name
     for file in (
