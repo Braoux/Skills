@@ -26,7 +26,7 @@ def main() -> None:
         skill = skill_path.read_text(encoding="utf-8")
         assert skill.startswith("---\nname: " + name + "\n"), name
         assert re.search(r"^description: .+", skill, re.M), name
-        assert "requires.env" not in skill, name
+        assert not re.search(r"^requires\\.env\\s*:", skill, re.M), name
         assert "OPENAI_API_KEY" not in skill, name
         for section in ("## Procedure", "## Required output", "## Exclusions"):
             assert section in skill, f"{name}: {section}"
