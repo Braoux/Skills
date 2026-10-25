@@ -2,7 +2,7 @@
 
 Reusable, task-focused skills for AI coding agents. Originally designed for OpenClaw, they can also be consumed by other agents that support `SKILL.md` instructions.
 
-**Current status:** five implemented skills. Their outputs are decision aids and must be checked against real evidence.
+**Current status:** 13 implemented skills, including seven new zero-key revenue-growth skills and the pre-existing UX Persona Audit. All outputs are decision aids and require real-world validation.
 
 ## Available skills
 
@@ -13,8 +13,18 @@ Reusable, task-focused skills for AI coding agents. Originally designed for Open
 | **Technical Design** | Turn an understood requirement into an implementable, proportional design. | [Instructions](Technical-Design/SKILL.md) · [Guide](Technical-Design/README.md) |
 | **Architectural Audit** | Examine architectural cohesion, coupling and changeability at file or project level. | [Instructions](Architectural-Audit/SKILL.md) · [Guide (FR)](Architectural-Audit/README.md) |
 | **Software Functional Context** | Create portable, evidence-based documentation of existing application behavior. | [Instructions](Software-Functional-Context/SKILL.md) · [Guide](Software-Functional-Context/README.md) |
+| **UX Persona Audit** | Simulated first-impression UX panel; its current AI-analysis script requires an API key (capture-only does not). | [Instructions](UX%20Persona%20Audit/SKILL.md) · [Guide](UX%20Persona%20Audit/README.md) |
+| **Player Demand Evidence** | Validate actual player need, usefulness and repeat-use behavior from real observations. | [Instructions](player-demand-evidence/SKILL.md) · [Guide](player-demand-evidence/README.md) |
+| **Activation & Retention Audit** | Quantify the first-use funnel and mature return cohorts using local event exports. | [Instructions](activation-retention-audit/SKILL.md) · [Guide](activation-retention-audit/README.md) |
+| **Matchup Trust Gate** | Validate gameplay advice and evidence before scaling acquisition. | [Instructions](matchup-trust-gate/SKILL.md) · [Guide](matchup-trust-gate/README.md) |
+| **Organic Acquisition Experiments** | Test discoverability through authentic content and first-party outcomes. | [Instructions](organic-acquisition-experiments/SKILL.md) · [Guide](organic-acquisition-experiments/README.md) |
+| **Pricing & Offer Validation** | Measure genuine paying intent without deceptive checkout tests. | [Instructions](pricing-offer-validation/SKILL.md) · [Guide](pricing-offer-validation/README.md) |
+| **Analysis Unit Economics** | Determine viable costs, cache economics and break-even from real local data. | [Instructions](analysis-unit-economics/SKILL.md) · [Guide](analysis-unit-economics/README.md) |
+| **Growth Decision Review** | Choose the three next business experiments from verified evidence. | [Instructions](growth-decision-review/SKILL.md) · [Guide](growth-decision-review/README.md) |
 
 > The mixed-case directories are historical names retained for compatibility. `Ticket-Readyness/` is a legacy path; the canonical skill identifier is `ticket-readiness`.
+
+See the [zero-key growth workflow](ZERO_KEY_GROWTH.md) for the seven revenue-focused skills and their evidence requirements.
 
 ## Typical workflow
 

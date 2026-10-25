@@ -20,3 +20,5 @@ jobs:
           python-version: "3.11"
       - name: Validate skill metadata and Markdown docs
         run: python3 scripts/validate_skills.py
+      - name: Test no-key growth skill contracts
+        run: python3 scripts/test_zero_key_growth_skills.py
